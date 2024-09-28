@@ -33,10 +33,10 @@ public class BoardServiceImpl implements BoardService{
 	public BoardVO getOneBoard(int id) {
 		int rows = this.boardDao.updateViewCount(id);
 		if(rows > 0) {
-			BoardVO boardVo = this.boardDao.selectOneBoard(id);
-			return boardVo;
+			return this.boardDao.selectOneBoard(id);
 		}
 		return null;
+		
 	}
 	 
 }

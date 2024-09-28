@@ -15,4 +15,5 @@ public interface BoardDao {
 	public BoardVO selectOneBoard(int id);
 	
 	public int updateViewCount(int id);
+	
 }

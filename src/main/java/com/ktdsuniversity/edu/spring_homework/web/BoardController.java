@@ -37,7 +37,11 @@ public class BoardController {
 	@GetMapping("/board/view")
 	public String viewOneBoard(@RequestParam int id,Model model) {
 		BoardVO boardVo = this.boardSerivce.getOneBoard(id);
-		model.addAttribute("boardVo",boardVo);
+		model.addAttribute("boardVO", boardVo);
+		if(boardVo == null) {
+			return "redirect:/board/list";
+		}
 		return "board/boardview";
+		
 	}
 }
